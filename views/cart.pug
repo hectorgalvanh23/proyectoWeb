@@ -1,0 +1,51 @@
+extends ./index.pug
+
+block contenido
+
+    div(ng-controller="shop")
+        div(class="product-big-title-area")
+            div(class="container")
+                div(class="row")
+                    div(class="col-md-12")
+                        div(class="product-bit-title text-center")
+                            h2 Carrito
+
+         
+    
+        form(method="post" action="#")
+            table(cellspacing="0" class="shop_table cart")
+                thead
+                    tr
+                        th(class="product-remove") &nbsp;
+                        th(class="product-thumbnail") &nbsp;
+                        th(class="product-name") Product
+                        th(class="product-price") Price
+                        th(class="product-subtotal") Total
+                                        
+                tbody(ng-repeat="arti in car")
+                    tr(class="cart_item")
+                        td(class="product-remove")
+                            button(ng-click="carrito.delete(arti, $index); get_total();get_subTotal()") x
+                                            
+
+                        td(class="product-thumbnail")
+                            a(href="single-product.html")
+                                img(width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="{{arti.imagen}}")
+                                            
+
+                        td(class="product-name")
+                            a(href="single-product.html") {{arti.nombre}} 
+                                            
+
+                        td(class="product-price")
+                            span(class="amount") {{arti.precio}} 
+                                        
+
+                        td(class="product-subtotal")
+                            span(class="amount") {{arti.importe}} 
+                                        
+
+                                        
+        h3 Subtotal: {{subtotal}}
+                                         
+        h3 Total: {{total}}

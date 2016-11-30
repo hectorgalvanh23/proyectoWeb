@@ -1,0 +1,77 @@
+extends ./index.pug
+
+block contenido
+
+
+    div(ng-controller="shop")
+        div(class="product-big-title-area")
+            div(class="container")
+                div(class="row")
+                    div(class="col-md-12")
+                        div(class="product-bit-title text-center")
+                            h2 Descripcion
+
+
+    
+    
+        div(class="single-product-area")
+            div(class="zigzag-bottom")
+            div(class="container")
+                div(class="row")
+                    div(class="col-md-8")
+                        div(class="product-content-right")
+                            div(class="row")
+                                div(class="col-sm-6")
+                                    div(class="product-images")
+                                        div(class="product-main-img")
+                                            img(src='img/' + doc.imagenUrl)   
+                                        
+                                    
+                            
+                                div(class="col-sm-6")
+                                    div(class="product-inner")
+                                        h2(class="product-name")=doc.nombre
+                                        p 
+
+                                        div(class="product-inner-price")
+                                            ins=doc.precio 
+                                    
+                                    
+                                    
+                                    
+                                        div(class="product-inner-category")
+                                            p Category: 
+                                                a(href="") Summer. Tags: 
+                                                a(href="") awesome, 
+                                                a(href="") best, 
+                                                a(href="") sale, 
+                                                a(href="") shoes.
+                                    
+                                    
+                                    div(role="tabpanel")
+                                        ul(class="product-tab" role="tablist")
+                                            li(role="presentation" class="active")
+                                                a(href="#home" aria-controls="home" role="tab" data-toggle="tab") Description
+                                            li(role="presentation")
+                                                a(href="#profile" aria-controls="profile" role="tab" data-toggle="tab") Reviews
+                                        
+                                        div(class="tab-content")
+                                            div(role="tabpanel" class="tab-pane fade in active" id="home")
+                                                h2 Product Description
+                                                p= doc.desc
+
+                                                
+                                            
+                                            div(role="tabpanel" class="tab-pane fade" id="profile")
+                                                h2 Reviews
+                                                    div(class="submit-review")
+                                                        p 
+                                                            label(for="name") Name 
+                                                            input(name="name" type="text")
+                                                        p 
+                                                            label(for="email") Email
+                                                            input(name="email" type="email")
+                                                        div(class="rating-chooser")
+                                                            p Your rating
+
+                    
